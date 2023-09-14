@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BetterCompass</title>
+    <link rel="shortcut icon" href="./icon.png" type="x-icon">
+    <link href="icon.png" type="x-icon">
+    <meta property="og:title" content="BetterCompass">
+    <meta property="og:image" content="https://quark88.github.io/bettercompass/embedicon.png">
+    <meta property="og:url" content="https://quark88.github.io/bettercompass">
+    <meta property="og:type" content="Political test">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content="BetterCompass kills Sapply.">
+    <meta property="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: Noyh;
+            src: url(./Noyh.otf);
+        }
+
+        @font-face {
+            font-family: Rajdhani;
+            src: url(./Rajdhani.ttf);
+        }
+
+        * {
+            margin: auto;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        html {
+            background-color: #001830;
+        }
+
+        body {
+            width: 90%;
+            height: 100%;
+            padding: 0 5%;
+        }
+
+        a,
+        a:visited,
+        a:hover,
+        a:focus,
+        a:active {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        h1 {
+            font-family: Noyh;
+            font-size: 12vmax;
+            font-weight: 500;
+            margin: 1vmax;
+        }
+
+        h2 {
+            font-family: Noyh;
+            font-size: 4vmax;
+            font-weight: 400;
+            margin: 1vmax;
+        }
+
+        p {
+            font-family: Rajdhani;
+            font-size: 2vmax;
+            font-weight: 300;
+        }
+
+        button {
+            font-family: Rajdhani;
+            font-size: 2vmax;
+            font-weight: 600;
+            border: none;
+            padding: 1vmax;
+            text-transform: uppercase;
+            margin: 3vmax;
+            width: 20vmax;
+            cursor: pointer;
+            background-color: #808080;
+            transition: .25s;
+        }
+
+        button:hover {
+            background-color: #606060;
+        }
+
+        .start {
+            font-size: 4vmax;
+            width: 40vmax;
+        }
+
+        .start:hover {
+            width: 50vmax;
+            background-color: #00c000;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%, 0 0);
+        }
+
+        #explanation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vmax;
+        }
+
+        .info {
+            width: 50%;
+            margin: 2vmax;
+        }
+
+        #compass {
+            transition: .2s;
+            cursor: pointer;
+        }
+
+        #compass:hover {
+            transform: scale(1.05);
+        }
+
+        #cards {
+            display: grid;
+            grid-template-columns: 45% 10% 45%;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 2vmax;
+        }
+
+        .card {
+            transition: .2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        #collective {
+            grid-area: 1/1/2/2;
+        }
+
+        #individual {
+            grid-area: 1/3/2/4;
+        }
+
+        #dismantling {
+            grid-area: 2/1/3/2;
+        }
+
+        #hierarchy {
+            grid-area: 2/3/3/4;
+        }
+
+        #nature {
+            grid-area: 3/1/4/2;
+        }
+
+        #future {
+            grid-area: 3/3/4/4;
+        }
+
+        #colind {
+            grid-area: 1/2/2/3;
+        }
+
+        #dishie {
+            grid-area: 2/2/3/3;
+        }
+
+        #natfut {
+            grid-area: 3/2/4/3;
+        }
+
+        #svgholder {
+            margin-top: 8vmax;
+            margin-bottom: 1vmax;
+        }
+
+        .footer {
+            font-size: 3vmax;
+            margin: 2vmax;
+        }
+
+        .socialsicon {
+            height: 6vmax;
+            width: 6vmax;
+            margin: 0 1vmax;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 100%;
+            transition: 0.1s ease-in-out;
+        }
+
+        .socialsicon:hover {
+            scale: 1.1;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #explanation {
+                flex-direction: column;
+            }
+
+            .info {
+                width: 80%;
+            }
+
+            .socialsicon {
+                height: 16vmin;
+                width: 16vmin;
+                margin: 0 2vmin;
+            }
+
+            .socialsicon:hover {
+                scale: 1.1;
+            }
+
+            #svgholder {
+                margin-top: 16vmin;
+                margin-bottom: 8vmin;
+            }
+
+            .footer {
+                font-size: 6vmin;
+                margin: 6vmin;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BetterCompass</h1>
+    <section id="index">
+        <h2>A sensible compass test</h2>
+        <button class="start" onclick="page('quiz')">Let's go</button>
+        <div id="explanation">
+            <div class="info">
+                <img id="compass" src="./compass.svg">
+            </div>
+            <div class="info" id="cards">
+                <img class="card" id="collective" src="./collective.svg">
+                <img id="colind" src="./axis.svg">
+                <img class="card" id="individual" src="./individual.svg">
+                <img class="card" id="dismantling" src="./dismantling.svg">
+                <img id="dishie" src="./axis.svg">
+                <img class="card" id="hierarchy" src="./hierarchy.svg">
+                <img class="card" id="nature" src="./nature.svg">
+                <img id="natfut" src="./axis.svg">
+                <img class="card" id="future" src="./future.svg">
+            </div>
+        </div>
+    </section>
+    <section id="quiz">
+        <button onclick="page('index')">Back</button>
+    </section>
+    <section id="results"></section>
+    <div id="svgholder">
+        <p class="footer">
+            <a target="_blank" href="https://github.com/QUARK88">Quark 2023</a>
+        </p>
+        <img src="discord.svg" class="socialsicon"
+            onclick="navigator.clipboard.writeText('realquark');confirm('Discord tag copied!');">
+        <a target="_blank" href="https://www.reddit.com/user/QK_QUARK88"><img src="reddit.svg" class="socialsicon"></a>
+        <a target="_blank" href="https://x.com/RenaudBeaulieuQ"><img src="x.svg" class="socialsicon"></a>
+    </div>
+</body>
+
+<script>
+    const index = document.getElementById("index")
+    const quiz = document.getElementById("quiz")
+    const results = document.getElementById("results")
+    const pages = [index, quiz, results]
+
+    function page(pageName) {
+        for (const p of pages) {
+            if (p.id === pageName) {
+                p.style.display = "block"
+            } else {
+                p.style.display = "none"
+            }
+        }
+    }
+
+    page("index")
+</script>
+
+</html>
